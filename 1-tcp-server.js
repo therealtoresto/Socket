@@ -4,13 +4,13 @@ const net = require('net');
 
 const onData = (data, ...args) => {
     console.dir({ args });
-    console.log(': ' + data);
+    console.log('📧 : ' + data);
 };
 
 const server = net.createServer(socket => {
     console.dir(socket.address());
     socket.setNoDelay(true);
-    socket.write('');
+    socket.write('💖');
     socket.on('data', onData);
     socket.on('error', err => {
         console.log('Socket error', err);
